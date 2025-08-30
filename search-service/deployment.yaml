@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: search-service
-          image: 10.0.0.119:5000/search-service:v3
+          image: 10.0.0.119:5000/ahmed_costco/search-service:v3
           imagePullPolicy: Always
           ports:
             - containerPort: 8090
