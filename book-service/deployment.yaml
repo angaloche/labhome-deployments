@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: book-service
+  namespace: test
 spec:
   replicas: 2
   selector:
@@ -49,3 +50,27 @@ spec:
       port: 8091
       targetPort: 8091
       nodePort: 30081
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-search
+  namespace: test   # 👈 ton namespace app
+spec:
+  ports:
+    - port: 3306
+      targetPort: 3306
+  clusterIP: None
+
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: mysql-search
+  namespace: test   # 👈 ton namespace app
+subsets:
+  - addresses:
+      - ip: 10.0.0.119
+    ports:
+      - port: 3306
