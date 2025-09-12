@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: book-service
-          image: 10.0.0.119:5000/ahmed_personnel/bookmarkr:main-20250911-2142
+          image: 10.0.0.119:5000/ahmed_personnel/bookmarkr:main-20250912-2146
           imagePullPolicy: Always
           ports:
             - containerPort: 8091
