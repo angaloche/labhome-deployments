@@ -1,0 +1,6 @@
+apiVersion: v2
+name: search-service          # nom du chart
+description: "Helm chart for deploying the Search Service application"
+type: application           # c’est une application (pas une librairie)
+version: 0.1.0              # version du chart (à incrémenter à chaque modification)
+appVersion: "1.0"           # version de l’application (peut correspondre à ton tag Docker)

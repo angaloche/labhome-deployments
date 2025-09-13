@@ -1,0 +1,28 @@
+# values.yaml
+replicaCount: 2
+
+image:
+  repository: 10.0.0.119:5000/ahmed_costco/search-service
+  tag: v7
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 8090
+  targetPort: 8090
+  nodePort: 30080
+
+env:
+  SPRING_PROFILES_ACTIVE: dev
+
+readinessProbe:
+  path: /actuator/health
+  port: 8090
+  initialDelaySeconds: 30
+  periodSeconds: 10
+
+livenessProbe:
+  path: /actuator/health
+  port: 8090
+  initialDelaySeconds: 60
+  periodSeconds: 30
