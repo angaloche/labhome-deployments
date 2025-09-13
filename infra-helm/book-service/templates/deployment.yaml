@@ -32,7 +32,7 @@ spec:
           livenessProbe:
             httpGet:
               path: {{.Values.livenessProbe.path }}
-              port: {{.Values.livenessProbe.path }}
+              port: {{.Values.livenessProbe.port }}
             initialDelaySeconds: {{.Values.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{.Values.livenessProbe.periodSeconds }}
 ---
