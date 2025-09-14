@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: book-service
+  name: search-service
   namespace: dev
 spec:
   replicas: {{.Values.replicaCount}}
   selector:
     matchLabels:
-      app: book-service
+      app: search-service
   template:
     metadata:
       labels:
-        app: book-service
+        app: search-service
     spec:
       containers:
-        - name: book-service
+        - name: search-service
           image: {{.Values.image.repository }}:{{.Values.image.tag}}
           imagePullPolicy: {{.Values.image.pullPolicy }}
           ports:
@@ -39,11 +39,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: book-service
+  name: search-service
 spec:
   type: {{.Values.service.type}}
   selector:
-    app: book-service
+    app: search-service
   ports:
     - protocol: TCP
       port: {{.Values.service.port}}
