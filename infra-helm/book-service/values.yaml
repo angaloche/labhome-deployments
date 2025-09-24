@@ -3,7 +3,7 @@ replicaCount: 2
 
 image:
   repository: 10.0.0.119:5000/ahmed_personnel/bookmarkr
-  tag: 0.0.1-SNAPSHOT
+  tag: bookmarkr:20250924-0301
   pullPolicy: Always
 
 service:
