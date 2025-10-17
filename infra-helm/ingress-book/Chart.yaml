@@ -1,5 +1,5 @@
 apiVersion: v2
-name: book-service          # nom du chart
+name: book-ingress          # nom du chart
 description: "Helm chart for deploying the Book Service application"
 type: application           # c’est une application (pas une librairie)
 version: 0.1.0              # version du chart (à incrémenter à chaque modification)
