@@ -1,0 +1,28 @@
+# values.yaml
+replicaCount: 2
+
+image:
+  repository: 10.0.0.119:5000/ahmed_personnel/bookmarkr
+  tag: 20251013-1246
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 8091
+  targetPort: 8091
+  nodePort: 30081
+
+env:
+  SPRING_PROFILES_ACTIVE: dev
+
+readinessProbe:
+  path: /actuator/health
+  port: 8091
+  initialDelaySeconds: 30
+  periodSeconds: 10
+
+livenessProbe:
+  path: /actuator/health
+  port: 8091
+  initialDelaySeconds: 60
+  periodSeconds: 30
